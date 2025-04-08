@@ -6,6 +6,6 @@ services:
     startCommand: "java -jar build/libs/NaturalNatureFinalApp-0.0.1-SNAPSHOT.jar"
     envVars:
       - key: JAVA_VERSION
-        value: 11
+        value: 21
       - key: JAVA_HOME
         value: "/opt/render/project/.jdk"
