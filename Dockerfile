@@ -14,6 +14,8 @@ RUN chmod +x gradlew
 # Стартираме build процеса с gradlew
 RUN ./gradlew clean build --stacktrace
 
+# Добави инсталация на Gradle, ако е необходимо
+RUN apk add --no-cache gradle
 
 # Стартираме приложението чрез JAR файл
 CMD ["java", "-jar", "build/libs/NaturalNatureFinalApp-0.0.1-SNAPSHOT.jar"]
