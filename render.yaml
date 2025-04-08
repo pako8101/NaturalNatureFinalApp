@@ -8,5 +8,5 @@ services:
       - key: JAVA_HOME
         value: /opt/java/openjdk
       - key: JAVA_VERSION
-        value: 21
+        value: 17
 
