@@ -44,8 +44,10 @@ logging:
     blog: WARN
   pattern:
     level:
-server:
-  port: 8029
+      server:
+        port: ${PORT:8029}
+#server:
+#  port: 8029
 
 
 servlet:
