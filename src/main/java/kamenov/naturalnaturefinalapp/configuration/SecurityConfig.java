@@ -54,6 +54,8 @@ public class SecurityConfig {
                                                 "/responsible-fashion/**",
                                                 "/article-details/**",
                                                 "/nutrition/**",
+                                                "/wellness/**",
+                                                "/wellness-article-details/**",
                                                 "/nutrition-article-details/**",
                                                 "/reducing-plastic-waste/**",
                                                 "/sustainable-transportation/**",

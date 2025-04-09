@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head::head"></head>
+<meta charset="UTF-8">
+<title th:text="${article.title}"></title>
+<link rel="stylesheet" th:href="@{/css/nutrition-article-details.css}">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<body>
+<!-- Navbar -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<main class="article-content">
+    <h1 th:text="${article.title}"></h1>
+    <img th:src="${article.image}" alt="Article Image" class="article-image">
+    <div th:utext="${article.content}" class="article-text"></div>
+    <a th:href="@{/wellness}" class="back-link">Back to Wellness</a>
+</main>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

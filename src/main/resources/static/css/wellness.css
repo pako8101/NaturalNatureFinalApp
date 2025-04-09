@@ -1,0 +1,240 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(2, 136, 209, 0.1)), #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, rgba(46, 125, 50, 0.7), rgba(2, 136, 209, 0.7)), url('/images/wellness-hero.jpg') no-repeat center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 3s infinite;
+}
+
+.wellness-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    margin: 0;
+    animation: wave 2s infinite;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Main Content */
+.wellness-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+.wellness-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.wellness-table th, .wellness-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.wellness-table th {
+    background: linear-gradient(90deg, #2e7d32, #4fc3f7);
+    color: white;
+    font-weight: bold;
+}
+
+.wellness-table tr:nth-child(even) {
+    background-color: #e8f5e9;
+}
+
+.wellness-table tr:hover {
+    background-color: #b3e5fc;
+}
+
+/* Media Container */
+.media-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.section-image, .section-video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.section-image:hover, .section-video:hover {
+    transform: scale(1.05);
+}
+
+.section-video {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+}
+
+/* Articles Section */
+.articles-section {
+    margin: 40px 0;
+}
+
+.articles-section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-card h3 {
+    font-size: 1.5rem;
+    color: #4fc3f7;
+    margin-bottom: 10px;
+}
+
+.article-card h3 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.article-card h3 a:hover {
+    color: #2e7d32;
+}
+
+.article-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination button {
+    background: linear-gradient(90deg, #2e7d32, #4fc3f7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.pagination button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: linear-gradient(90deg, #4fc3f7, #2e7d32);
+    transform: scale(1.1);
+}
+
+.pagination span {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #2e7d32, #4fc3f7);
+    color: white;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Animations */
+@keyframes wave {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}

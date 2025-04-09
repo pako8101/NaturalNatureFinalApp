@@ -15,7 +15,8 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     password: ${db_password}
     username: ${db_username}
-    url: jdbc:mysql://localhost:3306/natural_nature_app?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+    url: ${DATABASE_URL}
+#    jdbc:mysql://localhost:3306/natural_nature_app?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
   thymeleaf: # Thymeleaf
     cache: false
     mode: HTML
@@ -131,7 +132,7 @@ cloudinary:
 
 
 jwt:
-  secret: WSdv1kEE1tCT1a8ihRSqfwMNzlPBq8IWSdv1kEE1tCT1a8ihRSqfwMNzlPBq8IWSdv1kEE1tCT1a8ihRSqfwMNzlPBq8I
+  secret: ${jwt.secret}
   expiration: ${jwt.expiration:58000}
 
 user.deletion: P300D
@@ -182,14 +183,14 @@ application.yaml:
                         authorization-uri: https://www.facebook.com/v10.0/dialog/oauth
                         token-uri: https://graph.facebook.com/v10.0/oauth/access_token
                         user-info-uri: https://graph.facebook.com/me?fields=id,name,email
-
-
-                    services:
-                      - type: web
-                        name: natural-nature-backend
-                        runtime: docker
-                        buildCommand: ./gradlew build
-                        startCommand: java -jar build/libs/app.jar
-                        envVars:
-                          - key: JAVA_HOME
-                            value: /opt/java/openjdk
+#
+#
+#                    services:
+#                      - type: web
+#                        name: natural-nature-backend
+#                        runtime: docker
+#                        buildCommand: ./gradlew build
+#                        startCommand: java -jar build/libs/app.jar
+#                        envVars:
+#                          - key: JAVA_HOME
+#                            value: /opt/java/openjdk
