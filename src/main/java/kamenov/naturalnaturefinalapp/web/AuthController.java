@@ -112,11 +112,11 @@ public class AuthController {
             model.addAttribute("error", "Email already exists");
             return "register";
         }
-        if (!recaptchaService.validateRecaptcha(recaptchaResponse)) {
-            logger.warn("Invalid reCAPTCHA for username: {}", userRegisterDto.getUsername());
-            model.addAttribute("error", "Invalid reCAPTCHA");
-            return "register";
-        }
+//        if (!recaptchaService.validateRecaptcha(recaptchaResponse)) {
+//            logger.warn("Invalid reCAPTCHA for username: {}", userRegisterDto.getUsername());
+//            model.addAttribute("error", "Invalid reCAPTCHA");
+//            return "register";
+//        }
 
         try {
             logger.info("Registering user: {}", userRegisterDto.getUsername());
@@ -146,11 +146,11 @@ public class AuthController {
                             Model model) {
         logger.info("Received login request for username: {}", loginDto.getUsername());
 
-        if (!recaptchaService.validateRecaptcha(recaptchaResponse)) {
-            logger.warn("Invalid reCAPTCHA for username: {}", loginDto.getUsername());
-            model.addAttribute("error", "Invalid reCAPTCHA");
-            return "login";
-        }
+//        if (!recaptchaService.validateRecaptcha(recaptchaResponse)) {
+//            logger.warn("Invalid reCAPTCHA for username: {}", loginDto.getUsername());
+//            model.addAttribute("error", "Invalid reCAPTCHA");
+//            return "login";
+//        }
 
         try {
             logger.info("Authenticating user: {}", loginDto.getUsername());
