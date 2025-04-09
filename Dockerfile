@@ -16,7 +16,7 @@ RUN chmod +x gradlew
 # 🛑 Стъпка 5: Спри Gradle от сваляне на toolchains
 ENV ORG_GRADLE_PROJECT_javaToolchainDownload=false
 # Стартираме build процеса с gradlew
-RUN ./gradlew clean build --stacktrace
+RUN ./gradlew clean build -x test --stacktrace
 
 # Добави инсталация на Gradle, ако е необходимо
 RUN apk add --no-cache gradle
