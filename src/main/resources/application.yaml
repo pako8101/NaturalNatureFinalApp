@@ -17,17 +17,24 @@ spring:
     username: ${db_username}
     url: ${DATABASE_URL}
 #    jdbc:mysql://localhost:3306/natural_nature_app?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
-  thymeleaf: # Thymeleaf
-    cache: false
-    mode: HTML
-    encoding: UTF-8
-    prefix: file:src/main/resources/templates/
 
+  thymeleaf:
+    prefix: classpath:/templates/
   web:
     resources:
-      static-locations: file:src/main/resources/static/
-      cache:
-        period: 0
+      static-locations: classpath:/static/
+#  thymeleaf: # Thymeleaf
+#    cache: false
+#    mode: HTML
+#    encoding: UTF-8
+#    prefix: file:src/main/resources/templates/
+#
+#  web:
+#    resources:
+#      static-locations: file:src/main/resources/static/
+#      cache:
+#        period: 0
+
 
   main:
     allow-circular-references: true
