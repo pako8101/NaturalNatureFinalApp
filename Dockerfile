@@ -4,6 +4,7 @@ FROM openjdk:17-jdk-alpine
 
 # Дефинираме работната директория
 WORKDIR /app
+RUN java -version
 
 # Копираме всички файлове от локалната директория в Docker контейнера
 COPY . .
