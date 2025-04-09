@@ -23,9 +23,9 @@
             <label for="password"><i class="fas fa-lock"></i>Password</label>
             <input type="password" id="password" autocomplete="current-password" th:field="*{password}" required>
         </div>
-        <div class="g-recaptcha" data-sitekey="6Ld9SPcqAAAAAHkFKu_gFZC9VzzWFYmBIbkxMDZP"></div>
-        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-        <div class="error" th:if="${error}" th:text="${error}"></div>
+<!--        <div class="g-recaptcha" data-sitekey="6Ld9SPcqAAAAAHkFKu_gFZC9VzzWFYmBIbkxMDZP"></div>-->
+<!--        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">-->
+<!--        <div class="error" th:if="${error}" th:text="${error}"></div>-->
         <button type="submit"><i class="fas fa-sign-in-alt"></i>Login</button>
     </form>
     <p>Don't have an account? <a th:href="@{/user/register}">Register here</a></p>

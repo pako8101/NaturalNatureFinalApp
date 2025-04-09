@@ -22,14 +22,11 @@ spring:
     encoding: UTF-8
     prefix: file:src/main/resources/templates/
 
-
   web:
     resources:
       static-locations: file:src/main/resources/static/
       cache:
         period: 0
-
-
 
   main:
     allow-circular-references: true
@@ -48,6 +45,7 @@ logging:
     level:
 server:
   port: 8029
+
 
 servlet:
   multipart:

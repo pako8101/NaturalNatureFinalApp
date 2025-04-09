@@ -45,10 +45,10 @@
             <input type="password" id="confirmPassword" autocomplete="new-password" th:field="*{confirmPassword}" required>
             <span class="error" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></span>
         </div>
-        <div class="g-recaptcha"    th:attr="data-sitekey=${@captchaSettings.getSite()}"></div>
-<!--             data-sitekey="6Lfue_cqAAAAADUMMk6-uwBbQWXKRoiPhkVI843e"-->
-        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-        <div class="error" th:if="${error}" th:text="${error}"></div>
+<!--        <div class="g-recaptcha"    th:attr="data-sitekey=${@captchaSettings.getSite()}"></div>-->
+<!--&lt;!&ndash;             data-sitekey="6Lfue_cqAAAAADUMMk6-uwBbQWXKRoiPhkVI843e"&ndash;&gt;-->
+<!--        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">-->
+<!--        <div class="error" th:if="${error}" th:text="${error}"></div>-->
         <button type="submit"><i class="fas fa-sign-in-alt"></i>Register</button>
     </form>
     <p>Already have an account? <a th:href="@{/login}">Login here</a></p>
@@ -60,17 +60,17 @@
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
-        const recaptchaResponse = document.getElementById('g-recaptcha-response');
+        // const recaptchaResponse = document.getElementById('g-recaptcha-response');
 
         // Попълваме полето с reCAPTCHA токена
-        try {
-            recaptchaResponse.value = grecaptcha.getResponse();
-            console.log("reCAPTCHA response:", recaptchaResponse.value); // Логираме в конзолата за дебъг
-        } catch (e) {
-            console.error("Error getting reCAPTCHA response:", e);
-            alert("Error with reCAPTCHA. Please try again.");
-            return false;
-        }
+        // try {
+        //     recaptchaResponse.value = grecaptcha.getResponse();
+        //     console.log("reCAPTCHA response:", recaptchaResponse.value); // Логираме в конзолата за дебъг
+        // } catch (e) {
+        //     console.error("Error getting reCAPTCHA response:", e);
+        //     alert("Error with reCAPTCHA. Please try again.");
+        //     return false;
+        // }
         if (username.length < 3) {
             alert('Username must be at least 3 characters');
             return false;
@@ -92,10 +92,10 @@
             alert('Must be the same!');
             return false;
         }
-        if (!recaptchaResponse.value) {
-            alert('Please complete the reCAPTCHA.');
-            return false;
-        }
+        // if (!recaptchaResponse.value) {
+        //     alert('Please complete the reCAPTCHA.');
+        //     return false;
+        // }
         return true;
     }
 </script>

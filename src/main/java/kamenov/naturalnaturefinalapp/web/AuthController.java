@@ -50,19 +50,21 @@ public class AuthController {
     private final UserRepository userRepository;
     private final SecurityContextRepository securityContextRepository;
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
-    private final RecaptchaService recaptchaService;
+ //   private final RecaptchaService recaptchaService;
     private final ModelMapper modelMapper;
     private final JwtService jwtService;
     @Value("${site_key}")
     private String recaptchaSiteKey;
 
     public AuthController(AuthenticationManager authenticationManager,
-                          UserService userService, UserRepository userRepository, SecurityContextRepository securityContextRepository, RecaptchaService recaptchaService, ModelMapper modelMapper, JwtService jwtService) {
+                          UserService userService, UserRepository userRepository,
+                          SecurityContextRepository securityContextRepository,
+                          ModelMapper modelMapper, JwtService jwtService) {
         this.authenticationManager = authenticationManager;
         this.userService = userService;
         this.userRepository = userRepository;
         this.securityContextRepository = securityContextRepository;
-        this.recaptchaService = recaptchaService;
+
         this.modelMapper = modelMapper;
         this.jwtService = jwtService;
     }
@@ -75,7 +77,7 @@ public class AuthController {
         if(!model.containsAttribute("user")) {
             model.addAttribute("user", new RegisterDto());
         }
-            model.addAttribute("recaptchaSiteKey", recaptchaSiteKey);
+//            model.addAttribute("recaptchaSiteKey", recaptchaSiteKey);
             return "register";
         }
     @PostMapping("/register")
@@ -84,7 +86,8 @@ public class AuthController {
                                HttpServletRequest request,
                                HttpServletResponse response,
                                RedirectAttributes redirectAttributes,
-                               @RequestParam(value = "g-recaptcha-response",required = false) String recaptchaResponse,
+                               @RequestParam(value = "g-recaptcha-response",
+                                       required = false) String recaptchaResponse,
                                Model model) {
         logger.info("Received registration request for username: {}", userRegisterDto.getUsername());
 
