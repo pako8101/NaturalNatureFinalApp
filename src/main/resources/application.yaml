@@ -131,7 +131,7 @@ cloudinary:
 
 
 jwt:
-  secret: ${jwt.secret:WSdv1kEE1tCT1a8ihRSqfwMNzlPBq8IWSdv1kEE1tCT1a8ihRSqfwMNzlPBq8IWSdv1kEE1tCT1a8ihRSqfwMNzlPBq8I}
+  secret: WSdv1kEE1tCT1a8ihRSqfwMNzlPBq8IWSdv1kEE1tCT1a8ihRSqfwMNzlPBq8IWSdv1kEE1tCT1a8ihRSqfwMNzlPBq8I
   expiration: ${jwt.expiration:58000}
 
 user.deletion: P300D
