@@ -4,8 +4,17 @@ services:
     env: docker
     buildCommand: "/opt/render/project/.jdk/bin/java -jar ./gradlew build"
     startCommand: "java -version && java -jar build/libs/NaturalNatureFinalApp-0.0.1-SNAPSHOT.jar"
+    plan: free
+    autoDeploy: true
+    dockerfilePath: Dockerfile
+    buildFilter:
+      paths:
+        - ./**
+    runtime: docker
     envVars:
       - key: JAVA_VERSION
         value: 21
+      - key: PORT
+        value: 8029
       - key: JAVA_HOME
         value: "/opt/render/project/.jdk"
