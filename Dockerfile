@@ -12,6 +12,9 @@ COPY . .
 # Настройваме правата на gradlew
 RUN chmod +x gradlew
 
+
+# 🛑 Стъпка 5: Спри Gradle от сваляне на toolchains
+ENV ORG_GRADLE_PROJECT_javaToolchainDownload=false
 # Стартираме build процеса с gradlew
 RUN ./gradlew clean build --stacktrace
 
