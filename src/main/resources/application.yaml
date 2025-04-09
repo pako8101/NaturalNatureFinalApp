@@ -15,9 +15,9 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     password: ${db_password}
     username: ${db_username}
-    url: ${DATABASE_URL}
-#    jdbc:mysql://localhost:3306/natural_nature_app?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/natural_nature_app?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
 
+  #  ${DATABASE_URL}
   thymeleaf:
     prefix: classpath:/templates/
   web:
