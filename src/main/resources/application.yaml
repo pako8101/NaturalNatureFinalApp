@@ -32,7 +32,7 @@ server:
   port: ${PORT:8029}
 logging:
   level:
-    org.springframework: DEBUG
+    org.springframework: TRACE
     org.springframework.jdbc: DEBUG
     kamenov.naturalnaturefinalapp: DEBUG
     org.hibernate.type.descriptor: TRACE
@@ -167,9 +167,10 @@ NaturalNatureApp:
 #  ancient_images: greek.jpeg, changeImage1.png, changeImage2.jpg, sphinks2.jpg
 #  refresh-cron: "0 */10 * * * *"
 
-recaptcha:
-secret: ${secret_key}
-site: ${site_key}
+#recaptcha:
+#secret: ${secret_key}
+#site: ${site_key}
+
 brand-service:
 base-url: http://localhost:8029
 
