@@ -23,7 +23,8 @@
     <div class="tips-gallery" th:each="tip : ${tips}">
         <div class="tip-card" th:if="${showAll} or ${tipStat.first}">
             <div class="tip-image-wrapper">
-                <img th:src="${tip.imagePath}" alt="Tip Image" class="tip-image">
+                <img th:src="${tip.imagePath}" alt="Tip Image" width="560"
+                     height="315" class="tip-image">
             </div>
             <h3 th:text="${tip.title}" class="tip-title">Tip Title</h3>
             <p th:text="${tip.description}" class="tip-description">Tip Description</p>
@@ -115,7 +116,7 @@
     <div class="article">
         <h3 class="article-title">4. Reduce Chemical Use</h3>
         <div class="article-content">
-            <img src="/images/natural-pest-control.jpg" alt="Natural Pest Control" class="article-image article-image-right">
+            <img src="/images/natural-pest-control-2.jpg" alt="Natural Pest Control" class="article-image article-image-right">
             <p>
                 Chemical fertilizers and pesticides can harm the environment, killing beneficial insects and polluting water sources. Instead, opt for natural alternatives.
             </p>

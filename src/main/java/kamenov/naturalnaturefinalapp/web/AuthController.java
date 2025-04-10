@@ -123,7 +123,17 @@ public class AuthController {
 
         try {
             logger.info("Registering user: {}", userRegisterDto.getUsername());
-            UserEntity user = userService.registerUser(userRegisterDto);
+            UserEntity user = userService.registerUser(userRegisterDto,successfulAuth -> {
+                SecurityContextHolderStrategy strategy = SecurityContextHolder.getContextHolderStrategy();
+
+                SecurityContext context = strategy.createEmptyContext();
+                context.setAuthentication(successfulAuth);
+
+                strategy.setContext(context);
+                securityContextRepository.saveContext(context, request, response);
+            });
+
+
             authenticateAndSetJwt(user, request, response);
             logger.info("User registered successfully: {}", user.getUsername());
             return "redirect:/";
