@@ -5,7 +5,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: 'TRUE'
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
       schema_management:
               ignore_missing_tables=true:
     open-in-view: 'false'

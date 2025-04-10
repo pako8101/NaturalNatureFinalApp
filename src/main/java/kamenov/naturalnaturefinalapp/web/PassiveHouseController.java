@@ -34,9 +34,9 @@ public class PassiveHouseController {
             System.out.println("PassiveHouseController: Initializing Passive Houses...");
             passiveHouseService.savePassiveHouse(new PassiveHouse(
                     "Understanding Eco-Friendly Homes: A Comprehensive Guide",
-                    "<p class=\"highlight\"Eco-friendly homes are designed to minimize environmental impact " +
-                            "through energy efficiency</p>," +
-                            " <p>sustainable materials, and renewable energy sources. Learn the basics of passive house design.</p>",
+                    "Eco-friendly homes are designed to minimize environmental impact " +
+                            "through energy efficiency," +
+                            " sustainable materials, and renewable energy sources. Learn the basics of passive house design.",
                     "/images/house-5.jpg",
                      "Energy Efficiency","https://www.youtube.com/embed/eRBNnfXXF4w"
             ));

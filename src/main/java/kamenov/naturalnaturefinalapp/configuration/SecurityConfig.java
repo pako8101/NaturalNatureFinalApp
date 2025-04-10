@@ -55,6 +55,8 @@ public class SecurityConfig {
                                                 "/article-details/**",
                                                 "/nutrition/**",
                                                 "/wellness/**",
+                                                "/animal-tourism/**",
+                                                "/animal-tourism-article-details/**",
                                                 "/wellness-article-details/**",
                                                 "/nutrition-article-details/**",
                                                 "/reducing-plastic-waste/**",
