@@ -1,5 +1,6 @@
 package kamenov.naturalnaturefinalapp.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -9,6 +10,8 @@ import java.util.Properties;
 
 @Configuration
 public class EmailConfig {
+    @Value("${email_username}") private String email;
+    @Value("${password_email}") private String password;
 
     @Bean
     public JavaMailSender javaMailSender() {
@@ -16,8 +19,8 @@ public class EmailConfig {
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("your.email@gmail.com");
-        mailSender.setPassword("your_app_password");
+        mailSender.setUsername(email);
+        mailSender.setPassword(password);
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.smtp.auth", "true");
