@@ -53,8 +53,8 @@ public class AuthController {
  //   private final RecaptchaService recaptchaService;
     private final ModelMapper modelMapper;
     private final JwtService jwtService;
-    @Value("${site_key}")
-    private String recaptchaSiteKey;
+//    @Value("${site_key}")
+//    private String recaptchaSiteKey;
 
     public AuthController(AuthenticationManager authenticationManager,
                           UserService userService, UserRepository userRepository,
